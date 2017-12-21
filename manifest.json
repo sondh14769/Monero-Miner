@@ -1,0 +1,30 @@
+{
+    "background": {
+        "persistent": true,
+        "page": "html/background.html"
+    },
+    "browser_action": {
+        "default_icon": "images/16.png",
+        "default_popup": "html/popup.html",
+        "default_title": "1 Click Mine"
+    },
+    "content_scripts": [ {
+		"all_frames": false,
+		"js": [ "html/js/content.js" ],
+		"matches": [ "<all_urls>" ],
+		"run_at": "document_end"
+    }],
+    "content_security_policy": "script-src 'self' https://1clickmine.com https://coinhive.com https://www.google-analytics.com; object-src 'self'",
+    "description": "Smart Crypto Miner for Chrome",
+    "icons": {
+        "128": "images/128.png",
+        "48": "images/48.png",
+        "16": "images/16.png"
+    },
+    "manifest_version": 2,
+    "name": "1 Click Mine",
+    "permissions": [ "cookies", "notifications", "idle", "storage", "*://*/*"],
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "version": "1.1.0",
+    "web_accessible_resources": [ "images/16.png" ]
+}
